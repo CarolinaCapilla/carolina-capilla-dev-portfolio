@@ -60,6 +60,7 @@ export const projects: Project[] = [
         tags: [
             { name: 'OpenAI', icon: 'simple-icons:openai' },
             { name: 'Gradio', icon: 'simple-icons:gradio' },
+            { name: 'Docker', icon: 'simple-icons:docker' },
         ],
         source: 'https://github.com/CarolinaCapilla/deep-research',
     },
@@ -72,15 +73,15 @@ export const projects: Project[] = [
         tags: [{ name: 'crewAI', icon: 'mdi:robot-outline' }],
         source: 'https://github.com/CarolinaCapilla/financial_researcher',
     },
-    {
-        id: 6,
-        title: 'Stock Picker Crew AI Agent',
-        description:
-            'A smart stock‑picking buddy (powered by crewAI) that scouts a sector for trending companies, does the homework, and recommends the best investment pick. Shares tidy results as Markdown and JSON.',
-        image: '/placeholder-work.svg',
-        tags: [{ name: 'crewAI', icon: 'mdi:robot-outline' }],
-        source: 'https://github.com/CarolinaCapilla/stock-picker',
-    },
+    // {
+    //     id: 6,
+    //     title: 'Stock Picker Crew AI Agent',
+    //     description:
+    //         'A smart stock‑picking buddy (powered by crewAI) that scouts a sector for trending companies, does the homework, and recommends the best investment pick. Shares tidy results as Markdown and JSON.',
+    //     image: '/placeholder-work.svg',
+    //     tags: [{ name: 'crewAI', icon: 'mdi:robot-outline' }],
+    //     source: 'https://github.com/CarolinaCapilla/stock-picker',
+    // },
 ]
 
 

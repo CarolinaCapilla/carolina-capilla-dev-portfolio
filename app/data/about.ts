@@ -145,6 +145,12 @@ export const aboutContent = {
                 description: "Building modern apps with Vue.js + Vuetify + Tailwind CSS.",
                 tags: [{ name: "Vue.js", icon: "simple-icons:vuedotjs" }, { name: "Vuetify", icon: "simple-icons:vuetify" }, { name: "Tailwind CSS", icon: "simple-icons:tailwindcss" }],
             },
+{
+                    title: "Docker",
+                    description:
+                        "Beginner-level Docker: containerize apps with simple Dockerfiles and run them using Docker; basic compose, volumes, and networking.",
+                    tags: [{ name: "Docker", icon: "simple-icons:docker" }],
+                },
         ] as Skill[],
     },
 };
