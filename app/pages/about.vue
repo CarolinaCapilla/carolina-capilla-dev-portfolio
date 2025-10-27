@@ -1,5 +1,5 @@
 <template>
-	<main class="mx-auto max-w-6xl px-6 py-24">
+	<main class="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-24">
 		<div class="grid grid-cols-12 gap-8">
 			<aside class="col-span-12 md:col-span-4 lg:col-span-3">
 				<div class="hidden md:block fixed left-5 top-1/2 -translate-y-1/2">
@@ -53,11 +53,11 @@
 
 			<section class="col-span-12 md:col-span-8 lg:col-span-9">
 				<header class="mb-10">
-					<div class="flex items-start gap-10">
-						<div class="flex w-42 shrink-0 flex-col items-start gap-3 -ml-8">
-							<img :src="person.avatar" alt="Avatar" class="h-42 w-42 rounded-full object-cover" >
+					<div class="flex flex-col md:flex-row items-start gap-6 md:gap-10">
+						<div class="flex w-full md:w-42 shrink-0 flex-col items-center md:items-start gap-3 md:-ml-8">
+							<img :src="person.avatar" alt="Avatar" class="h-32 w-32 md:h-42 md:w-42 rounded-full object-cover" >
 							<div
-								class="flex w-full items-center justify-center gap-2 text-m text-cyan-500 text-center"
+								class="flex w-full items-center justify-center gap-2 text-sm md:text-m text-cyan-500 text-center"
 							>
 								<Icon
 									v-if="person.locationIcon"
@@ -67,22 +67,22 @@
 								/>
 								<span>{{ person.location }}</span>
 							</div>
-							<div class="flex flex-nowrap gap-3">
+							<div class="flex flex-wrap justify-center md:justify-start gap-2 md:gap-3">
 								<span
 									v-for="(lang, li) in person.languages"
 									:key="li"
-									:class="[chipClass, 'px-4 py-1.5 text-sm']"
+									:class="[chipClass, 'px-3 md:px-4 py-1 md:py-1.5 text-xs md:text-sm']"
 								>
 									{{ lang }}
 								</span>
 							</div>
 						</div>
 
-						<div class="min-w-0">
-							<h1 class="text-7xl font-bold tracking-tight" :class="textClass">
+						<div class="min-w-0 w-full">
+							<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight" :class="textClass">
 								{{ person.name }}
 							</h1>
-							<p class="mt-2 text-xl text-neutral-300">{{ person.role }}</p>
+							<p class="mt-2 text-lg md:text-xl text-neutral-300">{{ person.role }}</p>
 
 							<div class="mt-4 flex flex-wrap gap-3">
 								<a
@@ -122,15 +122,15 @@
 							:key="idx"
 							:class="[cardClass, 'p-4']"
 						>
-							<div class="flex items-end justify-between">
-								<div class="text-lg font-medium" :class="textClass">
+							<div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-1 sm:gap-0">
+								<div class="text-base sm:text-lg font-medium" :class="textClass">
 									{{ exp.company }}
 								</div>
-								<div class="text-neutral-400 text-sm">{{ exp.timeframe }}</div>
+								<div class="text-neutral-400 text-xs sm:text-sm">{{ exp.timeframe }}</div>
 							</div>
-							<div class="mt-1 text-cyan-500 text-sm">{{ exp.role }}</div>
+							<div class="mt-1 text-cyan-500 text-xs sm:text-sm">{{ exp.role }}</div>
 
-							<ul class="mt-3 list-disc space-y-1 pl-5" :class="textClass">
+							<ul class="mt-3 list-disc space-y-1 pl-5 text-sm sm:text-base" :class="textClass">
 								<li v-for="(a, ai) in exp.achievements" :key="ai">{{ a }}</li>
 							</ul>
 						</div>

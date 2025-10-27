@@ -61,7 +61,7 @@ export const person: Person = {
 	email: 'carolina.capilla@gmail.com',
 	location: 'Europe/Madrid',
 	locationIcon: 'pepicons-pop:earth-europe',
-	languages: ['English', 'Spanish']
+	languages: ['English / Bilingual', 'Spanish / Native']
 }
 
 export const social: SocialLink[] = [
