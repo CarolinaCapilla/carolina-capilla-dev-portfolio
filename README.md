@@ -1,94 +1,232 @@
-# Carolina Capilla – Portfolio (Nuxt 4)
+# Carolina Capilla – Portfolio
 
-Personal portfolio built with Nuxt 4, Vue 3, and Tailwind CSS. It showcases About and Work pages with a clean, dark‑mode‑first design, a centered pill‑style navbar, and simple data files you can edit.
+Personal portfolio built with Nuxt 4, Vue 3, and Tailwind CSS. Features a beautiful dark/light theme, featured project carousel, project filtering, and a clean modern design.
 
-## Tech stack
+## ✨ Features
 
-- Nuxt 4 + Vue 3
-- Tailwind CSS 4 (via `@tailwindcss/vite`)
-- `@nuxt/icon` for icons
-- `@nuxtjs/color-mode` for theme toggling (dark by default)
+- 🎨 Dark/Light theme toggle with system preference detection
+- 🖼️ Featured project showcase with image carousel
+- 🔍 Project filtering by technology tags
+- 📱 Fully responsive design
+- ⚡ Fast and optimized with Nuxt 4
+- 🎯 Type-safe with TypeScript
+- 🧹 ESLint + Prettier configured
+- 🚀 CI/CD ready with GitHub Actions
 
-## Getting started
+## 🛠️ Tech Stack
 
-1) Install dependencies
+- **Framework**: Nuxt 4 + Vue 3
+- **Styling**: Tailwind CSS 4 (via `@tailwindcss/vite`)
+- **Icons**: `@nuxt/icon`
+- **Theme**: `@nuxtjs/color-mode`
+- **UI Components**: `@headlessui/vue`
+- **Type Safety**: TypeScript
+- **Code Quality**: ESLint + Prettier
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- npm
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd carolina-capilla-dev-portfolio
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   - Navigate to `http://localhost:3000`
+   - Home page: Hero section + Featured project
+   - Work page: `/work` - All projects with filtering
+   - About page: `/about` - Profile, experience, education, skills
+
+## 📜 Available Scripts
+
+```bash
+npm run dev          # Start development server
+npm run build        # Production build
+npm run preview      # Preview production build
+npm run generate     # Generate static site (SSG)
+npm run lint         # Run ESLint
+npm run lint:fix     # Fix ESLint errors
+npm run format       # Check Prettier formatting
+npm run format:fix   # Fix Prettier formatting
+```
+
+## 📁 Project Structure
 
 ```
-npm install
+app/
+├── components/
+│   ├── ContactModal.vue      # Contact form modal
+│   ├── FeaturedProject.vue   # Featured project with carousel
+│   ├── Footer.vue            # Site footer
+│   ├── HomeHero.vue          # Landing page hero section
+│   ├── Navbar.vue            # Navigation bar with theme toggle
+│   ├── ProjectFilters.vue    # Project tag filters
+│   ├── WorkCard.vue          # Individual project card
+│   └── WorkGrid.vue          # Project grid layout
+├── data/
+│   ├── about.ts              # Profile, social links, experience, education, skills
+│   ├── theme.ts              # Theme utilities and class helpers
+│   └── work.ts               # Projects data
+├── pages/
+│   ├── index.vue             # Home page (Hero + Featured project)
+│   ├── about.vue             # About page
+│   └── work.vue              # Work page (All projects with filters)
+├── types/
+│   └── project.ts            # TypeScript type definitions
+└── assets/
+    └── css/
+        └── main.css          # Global styles
+
+public/                        # Static assets (images, etc.)
 ```
 
-2) Run the dev server
+## ✏️ Customizing Content
 
-```
-npm run dev
-```
+### 1. Personal Information & About Page
 
-- Visit `/about` (the root `/` redirects to `/about` via `middleware/redirect-home.global.ts`).
-- Work grid is at `/work`.
-
-## Scripts
-
-```
-npm run dev       # start development server
-npm run build     # production build
-npm run preview   # preview production build
-npm run generate  # prerender (SSG) if you prefer static hosting
-```
-
-## Project structure (not exhaustive)
-
-- `app/app.vue`: App shell with `Navbar` and `Footer`.
-- `app/pages/about.vue`: About page rendering profile, experience, studies, and skills.
-- `app/pages/work.vue`: Work page rendering a grid of projects.
-- `app/components/WorkGrid.vue`, `app/components/WorkCard.vue`: Work listing UI.
-- `app/components/Navbar.vue`: Centered pill navbar with live clock and theme toggle.
-- `app/components/Footer.vue`: Simple footer.
-- `app/data/about.ts`: Profile, social links, and About page content.
-- `app/data/work.ts`: Array of projects shown on the Work page.
-- `app/data/theme.ts`: Small helpers for consistent light/dark classes.
-- `middleware/redirect-home.global.ts`: Redirects `/` → `/about`.
-- `public/`: Static assets (e.g., images like `/avatar.jpeg`, `/portfolio.png`).
-
-## Editing content
-
-### About page
 Edit `app/data/about.ts`:
 
-- `person`: name, role, avatar path, email, location, languages
-- `social`: array of links (GitHub, LinkedIn, Email, ...)
-- `aboutContent`:
-  - `intro`: paragraphs under the header
-  - `work.experiences`: company, timeframe, role, achievements
-  - `studies.institutions`: name and description
-  - `technical.skills`: title, description, tags (with optional icon names)
+- **`person`**: Name, role, avatar, email, location, languages
+- **`social`**: Social media links (GitHub, LinkedIn, etc.)
+- **`aboutContent`**:
+  - `intro`: Introduction paragraphs
+  - `work.experiences`: Work experience entries
+  - `studies.institutions`: Education history
+  - `technical.skills`: Technical skills with icons
 
-### Work page
-Projects are currently defined in `app/data/work.ts` using the `Project` type:
+### 2. Projects
 
-- `title`, `description`, `image` (use files in `public/`)
-- optional `tags` with `name` and optional `icon`
-- optional `link` (live demo) and `source` (GitHub)
-- optional `isPortfolio` to display a special overlay for this site
+Edit `app/data/work.ts`:
 
-There is also a sample Nuxt Content entry under `content/work/first-project.md` with frontmatter (`title`, `publishedAt`, `summary`, `images`). Nuxt Content is installed, but the Work page currently reads from `app/data/work.ts`. You can wire markdown content later if you prefer fully CMS‑like entries.
-
-## Theming
-
-- Uses `@nuxtjs/color-mode` with dark mode as the default.
-- Toggle theme via the button in `Navbar.vue`.
-- Tailwind is configured via Vite plugin in `nuxt.config.ts` and base styles in `app/assets/css/main.css`.
-
-## Deployment
-
-### Vercel
-1) Push the repo to GitHub.
-2) In Vercel, import the project and select the repo.
-3) Framework preset: Nuxt.
-4) Build command: `npm run build` (default). Vercel detects Nuxt 4 and serves `.output` automatically.
-5) Deploy.
-
-### Static hosting (optional)
+```typescript
+{
+  id: 1,
+  title: "Project Name",
+  description: "Project description",
+  image: "/project-image.png",
+  tags: [
+    { name: "Nuxt", icon: "simple-icons:nuxtdotjs" },
+    { name: "TypeScript", icon: "simple-icons:typescript" }
+  ],
+  link: "https://live-demo.com",  // Optional
+  source: "https://github.com/...", // Optional
+  isPortfolio: false // Set to true for portfolio project
+}
 ```
+
+**For the Featured Project Carousel:**
+- The Valorant project automatically shows 5 images (main + 4 additional)
+- Add images to `public/` folder
+- Update the carousel logic in `FeaturedProject.vue` if needed
+
+### 3. Images
+
+Place images in the `public/` directory:
+- `/avatar.jpeg` - Your profile photo
+- `/portfolio.png` - Portfolio preview (used for SEO/social sharing)
+- `/valorant_*.png` - Project screenshots
+
+### 4. Theme Customization
+
+The theme uses Tailwind CSS with custom color mode support:
+- Default preference: Dark mode
+- Modify in `nuxt.config.ts` under `colorMode`
+- Customize colors in `app/data/theme.ts`
+
+## 🎨 Theme Toggle
+
+The site supports both light and dark themes:
+- Default: Dark mode
+- Automatic: Respects system preferences
+- Manual: Toggle via the moon/sun icon in the navbar
+- Persists: User preference saved in localStorage
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Import project in Vercel
+3. Framework preset: **Nuxt.js**
+4. Build command: `npm run build`
+5. Deploy!
+
+### Netlify
+
+1. Connect your repository
+2. Build command: `npm run generate`
+3. Publish directory: `.output/public`
+4. Deploy!
+
+### Static Hosting
+
+Generate a static site:
+```bash
 npm run generate
 ```
-The prerendered site will be created in `.output/public`.
+Upload the `.output/public` folder to any static host.
+
+## 🔧 Development
+
+### Type Definitions
+
+All project types are defined in `app/types/project.ts`:
+- `Project`: Main project interface
+- `ProjectTag`: Technology tag interface
+
+### Adding New Icons
+
+Icons are provided by `@nuxt/icon`:
+- Browse icons at [Iconify](https://icon-sets.iconify.design/)
+- Use format: `collection:icon-name`
+- Example: `simple-icons:github`, `ph:house`
+
+### Code Quality
+
+The project includes:
+- **ESLint**: Configured with Nuxt ESLint preset
+- **Prettier**: Code formatting with consistent style
+- **TypeScript**: Full type safety across components
+
+Run checks:
+```bash
+npm run lint        # Check for errors
+npm run format      # Check formatting
+```
+
+Auto-fix:
+```bash
+npm run lint:fix    # Fix linting issues
+npm run format:fix  # Fix formatting issues
+```
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 👤 Author
+
+**Carolina Capilla**
+- Full Stack Developer
+- Specializing in Laravel & Nuxt.js
+
+---
+
+Built with ❤️ using Nuxt 4, Vue 3, and Tailwind CSS

@@ -1,32 +1,32 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 /* Smooth scrolling for in-page anchors */
 html {
-    scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 /* App theming */
 .app-root {
-    background-color: #ffffff;
+	background-color: #ffffff;
 }
 
 /* Global blue/black gradient background (dark only) */
 .dark .app-root {
-    background-color: rgb(23 23 23);
-    /* neutral-900 */
-    background-image:
-        radial-gradient(900px 600px at 50% 0%, rgba(34, 211, 238, 0.12), transparent 60%),
-        radial-gradient(700px 400px at 75% 20%, rgba(59, 130, 246, 0.08), transparent 60%),
-        radial-gradient(700px 400px at 25% 20%, rgba(15, 118, 110, 0.06), transparent 60%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+	background-color: rgb(23 23 23);
+	/* neutral-900 */
+	background-image:
+		radial-gradient(900px 600px at 50% 0%, rgba(34, 211, 238, 0.12), transparent 60%),
+		radial-gradient(700px 400px at 75% 20%, rgba(59, 130, 246, 0.08), transparent 60%),
+		radial-gradient(700px 400px at 25% 20%, rgba(15, 118, 110, 0.06), transparent 60%);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 /* Light mode keeps a very soft blue glow, centered */
 .light .app-root {
-    background-image:
-        radial-gradient(900px 600px at 50% 0%, rgba(34, 211, 238, 0.12), transparent 60%),
-        radial-gradient(700px 400px at 75% 20%, rgba(59, 130, 246, 0.08), transparent 60%),
-        radial-gradient(700px 400px at 25% 20%, rgba(15, 118, 110, 0.06), transparent 60%);
-    background-repeat: no-repeat;
+	background-image:
+		radial-gradient(900px 600px at 50% 0%, rgba(34, 211, 238, 0.12), transparent 60%),
+		radial-gradient(700px 400px at 75% 20%, rgba(59, 130, 246, 0.08), transparent 60%),
+		radial-gradient(700px 400px at 25% 20%, rgba(15, 118, 110, 0.06), transparent 60%);
+	background-repeat: no-repeat;
 }
