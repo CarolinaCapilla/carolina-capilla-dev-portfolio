@@ -84,7 +84,7 @@
 							</div>
 						</div>
 
-						<div class="min-w-0 w-full">
+						<div class="min-w-0 w-full text-center md:text-left">
 							<h1
 								class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight"
 								:class="textClass"
@@ -93,7 +93,7 @@
 							</h1>
 							<p class="mt-2 text-lg md:text-xl text-neutral-300">{{ person.role }}</p>
 
-							<div class="mt-4 flex flex-wrap gap-3">
+							<div class="mt-4 flex flex-wrap gap-3 justify-center md:justify-start">
 								<a
 									v-for="s in social"
 									:key="s.name"

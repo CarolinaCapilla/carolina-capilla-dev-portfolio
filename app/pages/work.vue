@@ -1,6 +1,6 @@
 <template>
-	<section class="max-w-5xl mx-auto px-6 py-12">
-		<h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-6">My Work</h2>
+	<section class="max-w-5xl mx-auto px-6 py-18">
+		<!-- <h2 class="text-3xl font-bold text-neutral-900 dark:text-white mb-6">My Work</h2> -->
 		<ProjectFilters
 			:tags="tags"
 			:selected="selectedTag"

@@ -1,7 +1,7 @@
 <template>
 	<div
-		class="group relative overflow-hidden rounded-lg cursor-pointer transition-transform active:scale-95"
-		:class="cardClass"
+		class="group relative overflow-hidden rounded-lg transition-transform md:cursor-default"
+		:class="[cardClass, { 'cursor-pointer active:scale-95': isMobile }]"
 		@click="handleCardClick"
 	>
 		<img
@@ -11,7 +11,7 @@
 		>
 		<div
 			class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center"
-			:class="{ 'opacity-100': showOverlay }"
+			:class="{ 'opacity-100': showOverlay && isMobile }"
 		>
 			<template v-if="project.isPortfolio">
 				<div class="flex flex-col items-center gap-2 text-white">
@@ -66,12 +66,16 @@
 			<p class="text-neutral-700 dark:text-neutral-300 text-sm">
 				{{ project.description }}
 			</p>
-			<div v-if="project.tags?.length" class="mt-3 flex flex-wrap gap-2">
+			<div
+				v-if="project.tags?.length"
+				class="mt-3 flex flex-wrap gap-2 transition-opacity duration-200 group-hover:opacity-0"
+				:class="{ 'opacity-0': showOverlay && isMobile }"
+			>
 				<span v-for="(tag, i) in project.tags" :key="i" :class="[chipClass, 'px-3 text-sm']">
 					<Icon
 						v-if="tag.icon"
 						:name="tag.icon"
-						class="mr-1 inline-block align-[-0.125em] transition-opacity duration-200 group-hover:opacity-0"
+						class="mr-1 inline-block align-[-0.125em]"
 						size="16"
 					/>
 					{{ tag.name }}
@@ -82,7 +86,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import { useThemeClasses } from '@/data/theme'
 import type { Project } from '@/types/project'
 
@@ -93,9 +97,25 @@ defineProps<{
 }>()
 
 const showOverlay = ref(false)
+const isMobile = ref(false)
+
+function checkMobile() {
+	isMobile.value = window.innerWidth < 768 // md breakpoint
+}
 
 function handleCardClick() {
-	// Toggle overlay on mobile tap
-	showOverlay.value = !showOverlay.value
+	// Only toggle overlay on mobile
+	if (isMobile.value) {
+		showOverlay.value = !showOverlay.value
+	}
 }
+
+onMounted(() => {
+	checkMobile()
+	window.addEventListener('resize', checkMobile)
+})
+
+onUnmounted(() => {
+	window.removeEventListener('resize', checkMobile)
+})
 </script>
