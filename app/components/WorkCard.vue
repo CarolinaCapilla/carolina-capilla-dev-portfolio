@@ -1,5 +1,9 @@
 <template>
-	<div class="group relative overflow-hidden rounded-lg" :class="cardClass">
+	<div
+		class="group relative overflow-hidden rounded-lg cursor-pointer transition-transform active:scale-95"
+		:class="cardClass"
+		@click="handleCardClick"
+	>
 		<img
 			:src="project.image"
 			:alt="project.title"
@@ -7,6 +11,7 @@
 		>
 		<div
 			class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center"
+			:class="{ 'opacity-100': showOverlay }"
 		>
 			<template v-if="project.isPortfolio">
 				<div class="flex flex-col items-center gap-2 text-white">
@@ -17,6 +22,7 @@
 							target="_blank"
 							rel="noopener"
 							class="mt-2 flex items-center gap-2 text-sm font-semibold"
+							@click.stop
 						>
 							<Icon name="simple-icons:github" size="18" />
 							<span>View Source Code</span>
@@ -32,6 +38,7 @@
 							target="_blank"
 							rel="noopener"
 							class="flex items-center gap-2 text-sm font-semibold"
+							@click.stop
 						>
 							<Icon name="pajamas:live-preview" size="18" />
 							<span>Live Demo</span>
@@ -43,6 +50,7 @@
 							target="_blank"
 							rel="noopener"
 							class="mt-2 flex items-center gap-2 text-sm font-semibold"
+							@click.stop
 						>
 							<Icon name="simple-icons:github" size="18" />
 							<span>View Source Code</span>
@@ -74,6 +82,7 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import { useThemeClasses } from '@/data/theme'
 import type { Project } from '@/types/project'
 
@@ -82,4 +91,11 @@ const { textClass, chipClass, cardClass } = useThemeClasses()
 defineProps<{
 	project: Project
 }>()
+
+const showOverlay = ref(false)
+
+function handleCardClick() {
+	// Toggle overlay on mobile tap
+	showOverlay.value = !showOverlay.value
+}
 </script>
