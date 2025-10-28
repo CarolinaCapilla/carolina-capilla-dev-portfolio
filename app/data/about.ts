@@ -89,7 +89,8 @@ export const aboutContent = {
 		display: true,
 		title: 'Introduction',
 		description: [
-			'Full Stack Developer with experience in backend and frontend development, building scalable, user-focused applications.',
+			'Open to full-time roles (remote or Madrid-based). I love building scalable web apps with Laravel and Vue/Nuxt, and I look for teams focused on clean architecture and long-term growth.',
+			'Full Stack Developer with 4+ years of experience in backend and frontend development, focused on creating scalable, user-centric applications.',
 			'Strong problem-solving and communication skills; quick to adapt and learn new technologies.',
 			'Recently built Valorant Skill Collector — a Nuxt app that uses the Riot API to fetch weapon skin data, lets users browse a curated skin library, create collections, and maintain wishlists.'
 		]

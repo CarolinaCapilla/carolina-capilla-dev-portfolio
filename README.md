@@ -33,17 +33,20 @@ Personal portfolio built with Nuxt 4, Vue 3, and Tailwind CSS. Features a beauti
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <your-repo-url>
    cd carolina-capilla-dev-portfolio
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Run the development server**
+
    ```bash
    npm run dev
    ```
@@ -132,6 +135,7 @@ Edit `app/data/work.ts`:
 ```
 
 **For the Featured Project Carousel:**
+
 - The Valorant project automatically shows 5 images (main + 4 additional)
 - Add images to `public/` folder
 - Update the carousel logic in `FeaturedProject.vue` if needed
@@ -139,6 +143,7 @@ Edit `app/data/work.ts`:
 ### 3. Images
 
 Place images in the `public/` directory:
+
 - `/avatar.jpeg` - Your profile photo
 - `/portfolio.png` - Portfolio preview (used for SEO/social sharing)
 - `/valorant_*.png` - Project screenshots
@@ -146,6 +151,7 @@ Place images in the `public/` directory:
 ### 4. Theme Customization
 
 The theme uses Tailwind CSS with custom color mode support:
+
 - Default preference: Dark mode
 - Modify in `nuxt.config.ts` under `colorMode`
 - Customize colors in `app/data/theme.ts`
@@ -153,6 +159,7 @@ The theme uses Tailwind CSS with custom color mode support:
 ## 🎨 Theme Toggle
 
 The site supports both light and dark themes:
+
 - Default: Dark mode
 - Automatic: Respects system preferences
 - Manual: Toggle via the moon/sun icon in the navbar
@@ -178,9 +185,11 @@ The site supports both light and dark themes:
 ### Static Hosting
 
 Generate a static site:
+
 ```bash
 npm run generate
 ```
+
 Upload the `.output/public` folder to any static host.
 
 ## 🔧 Development
@@ -188,12 +197,14 @@ Upload the `.output/public` folder to any static host.
 ### Type Definitions
 
 All project types are defined in `app/types/project.ts`:
+
 - `Project`: Main project interface
 - `ProjectTag`: Technology tag interface
 
 ### Adding New Icons
 
 Icons are provided by `@nuxt/icon`:
+
 - Browse icons at [Iconify](https://icon-sets.iconify.design/)
 - Use format: `collection:icon-name`
 - Example: `simple-icons:github`, `ph:house`
@@ -201,17 +212,20 @@ Icons are provided by `@nuxt/icon`:
 ### Code Quality
 
 The project includes:
+
 - **ESLint**: Configured with Nuxt ESLint preset
 - **Prettier**: Code formatting with consistent style
 - **TypeScript**: Full type safety across components
 
 Run checks:
+
 ```bash
 npm run lint        # Check for errors
 npm run format      # Check formatting
 ```
 
 Auto-fix:
+
 ```bash
 npm run lint:fix    # Fix linting issues
 npm run format:fix  # Fix formatting issues
@@ -224,6 +238,7 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 👤 Author
 
 **Carolina Capilla**
+
 - Full Stack Developer
 - Specializing in Laravel & Nuxt.js
 

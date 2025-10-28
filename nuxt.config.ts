@@ -7,10 +7,10 @@ export default defineNuxtConfig({
 	vite: {
 		plugins: [tailwindcss()]
 	},
-	modules: ['@nuxt/icon', '@nuxtjs/color-mode', '@nuxt/eslint'],
+	modules: ['@nuxt/icon', '@nuxtjs/color-mode', '@nuxt/eslint', '@vueuse/nuxt', 'motion-v/nuxt'],
 	colorMode: {
-		classSuffix: '', // use .dark/.light on html
-		preference: 'dark', // default to dark on first load
+		classSuffix: '',
+		preference: 'dark',
 		fallback: 'dark'
 	}
 })

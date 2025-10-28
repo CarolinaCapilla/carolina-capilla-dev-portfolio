@@ -1,94 +1,130 @@
 <template>
 	<article class="max-w-5xl mx-auto px-6 py-8">
-		<p class="mb-4 text-lg text-neutral-600 dark:text-neutral-400">
-			Featured: <strong>{{ project.title }}</strong> — {{ project.description }}
-		</p>
-		<div :class="cardClass" class="overflow-hidden rounded-lg">
-			<div class="relative">
-				<img
-					:src="images[currentIndex]"
-					:alt="project.title + ' screenshot ' + (currentIndex + 1)"
-					class="w-full h-96 object-cover"
-				>
+		<Motion
+			:initial="{
+				scale: 1.1,
+				opacity: 0,
+				filter: 'blur(20px)'
+			}"
+			:animate="{
+				scale: 1,
+				opacity: 1,
+				filter: 'blur(0px)'
+			}"
+			:transition="{
+				duration: 0.6,
+				delay: 0.6
+			}"
+		>
+			<p class="mb-4 text-lg text-neutral-600 dark:text-neutral-400">
+				Featured: <strong>{{ project.title }}</strong> — {{ project.description }}
+			</p>
+		</Motion>
 
-				<button
-					class="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 dark:bg-neutral-800/80 p-2 shadow"
-					aria-label="Previous image"
-					@click="prev"
-				>
-					<Icon name="ph:caret-left" size="18" />
-				</button>
-				<button
-					class="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 dark:bg-neutral-800/80 p-2 shadow"
-					aria-label="Next image"
-					@click="next"
-				>
-					<Icon name="ph:caret-right" size="18" />
-				</button>
+		<Motion
+			:initial="{
+				scale: 1.1,
+				opacity: 0,
+				filter: 'blur(20px)'
+			}"
+			:animate="{
+				scale: 1,
+				opacity: 1,
+				filter: 'blur(0px)'
+			}"
+			:transition="{
+				duration: 0.6,
+				delay: 0.7
+			}"
+		>
+			<div :class="cardClass" class="overflow-hidden rounded-lg">
+				<div class="relative">
+					<img
+						:src="images[currentIndex]"
+						:alt="project.title + ' screenshot ' + (currentIndex + 1)"
+						class="w-full h-96 object-cover"
+					>
 
-				<div class="absolute left-1/2 bottom-3 -translate-x-1/2 flex gap-2">
 					<button
-						v-for="(img, i) in images"
-						:key="i"
-						:class="indicatorClass(i)"
-						class="w-2 h-2 rounded-full"
-						:aria-label="`Go to image ${i + 1}`"
-						@click="() => (currentIndex = i)"
-					/>
-				</div>
-			</div>
-
-			<div class="p-6">
-				<h3 class="text-2xl font-semibold" :class="textClass">
-					{{ project.title }}
-				</h3>
-				<p class="mt-3 text-neutral-700 dark:text-neutral-300">
-					{{ project.description }}
-				</p>
-
-				<div v-if="project.tags?.length" class="mt-4 flex flex-wrap gap-2">
-					<span
-						v-for="(tag, i) in project.tags"
-						:key="i"
-						class="px-3 py-1 rounded-full border text-sm"
-						:class="chipClass"
+						class="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer"
+						aria-label="Previous image"
+						@click="prev"
 					>
-						<Icon
-							v-if="tag.icon"
-							:name="tag.icon"
-							class="mr-1 inline-block align-[-0.125em]"
-							size="16"
+						<Icon name="lucide:circle-arrow-left" size="32" />
+					</button>
+
+					<button
+						class="absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer"
+						aria-label="Next image"
+						@click="next"
+					>
+						<Icon name="lucide:circle-arrow-right" size="32" />
+					</button>
+
+					<div class="absolute left-1/2 bottom-3 -translate-x-1/2 flex gap-2">
+						<button
+							v-for="(_, i) in images"
+							:key="i"
+							:class="indicatorClass(i)"
+							class="w-2 h-2 rounded-full"
+							:aria-label="`Go to image ${i + 1}`"
+							@click="() => (currentIndex = i)"
 						/>
-						{{ tag.name }}
-					</span>
+					</div>
 				</div>
 
-				<div class="mt-6 flex gap-3">
-					<a
-						v-if="project.link && project.link !== '#'"
-						:href="project.link"
-						target="_blank"
-						rel="noopener"
-						class="px-4 py-2 rounded-md font-semibold"
-						:class="isDark ? 'bg-white text-black' : 'bg-black text-white'"
-						>Live Demo</a
-					>
-					<a
-						v-if="project.source && project.source !== '#'"
-						:href="project.source"
-						target="_blank"
-						rel="noopener"
-						class="px-4 py-2 rounded-md border cursor-pointer"
-						:class="
-							isDark
-								? 'border-neutral-700 bg-neutral-800/60 text-white hover:bg-neutral-800'
-								: 'border-black bg-white text-black hover:bg-neutral-50'
-						"
-						>Source</a
-					>
+				<div class="p-6">
+					<h3 class="text-2xl font-semibold" :class="textClass">
+						{{ project.title }}
+					</h3>
+					<p class="mt-3 text-neutral-700 dark:text-neutral-300">
+						{{ project.description }}
+					</p>
+
+					<div v-if="project.tags?.length" class="mt-4 flex flex-wrap gap-2">
+						<span
+							v-for="(tag, i) in project.tags"
+							:key="i"
+							class="px-3 py-1 rounded-full border text-sm"
+							:class="chipClass"
+						>
+							<Icon
+								v-if="tag.icon"
+								:name="tag.icon"
+								class="mr-1 inline-block align-[-0.125em]"
+								size="16"
+							/>
+							{{ tag.name }}
+						</span>
+					</div>
+
+					<div class="mt-6 flex gap-3">
+						<a
+							v-if="project.link && project.link !== '#'"
+							:href="project.link"
+							target="_blank"
+							rel="noopener"
+							class="px-4 py-2 rounded-md font-semibold"
+							:class="isDark ? 'bg-white text-black' : 'bg-black text-white'"
+							>Live Demo</a
+						>
+						<a
+							v-if="project.source && project.source !== '#'"
+							:href="project.source"
+							target="_blank"
+							rel="noopener"
+							class="px-4 py-2 rounded-md border cursor-pointer"
+							:class="
+								isDark
+									? 'border-neutral-700 bg-neutral-800/60 text-white hover:bg-neutral-800'
+									: 'border-black bg-white text-black hover:bg-neutral-50'
+							"
+							>Source</a
+						>
+					</div>
 				</div>
 			</div>
-		</div>
+		</Motion>
 	</article>
 </template>
 

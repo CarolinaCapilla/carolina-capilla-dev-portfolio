@@ -18,6 +18,8 @@
 		"@heroicons/vue": "^2.2.0",
 		"@nuxt/eslint": "^1.9.0",
 		"@tailwindcss/vite": "^4.1.13",
+		"@vueuse/nuxt": "^14.0.0",
+		"motion-v": "^1.7.4",
 		"nuxt": "^4.1.2",
 		"vue": "^3.5.21",
 		"vue-router": "^4.5.1"

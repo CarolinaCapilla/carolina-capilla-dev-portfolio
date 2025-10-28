@@ -54,8 +54,14 @@
 			<section class="col-span-12 md:col-span-8 lg:col-span-9">
 				<header class="mb-10">
 					<div class="flex flex-col md:flex-row items-start gap-6 md:gap-10">
-						<div class="flex w-full md:w-42 shrink-0 flex-col items-center md:items-start gap-3 md:-ml-8">
-							<img :src="person.avatar" alt="Avatar" class="h-32 w-32 md:h-42 md:w-42 rounded-full object-cover" >
+						<div
+							class="flex w-full md:w-42 shrink-0 flex-col items-center md:items-start gap-3 md:-ml-8"
+						>
+							<img
+								:src="person.avatar"
+								alt="Avatar"
+								class="h-32 w-32 md:h-42 md:w-42 rounded-full object-cover"
+							>
 							<div
 								class="flex w-full items-center justify-center gap-2 text-sm md:text-m text-cyan-500 text-center"
 							>
@@ -79,7 +85,10 @@
 						</div>
 
 						<div class="min-w-0 w-full">
-							<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight" :class="textClass">
+							<h1
+								class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight"
+								:class="textClass"
+							>
 								{{ person.name }}
 							</h1>
 							<p class="mt-2 text-lg md:text-xl text-neutral-300">{{ person.role }}</p>
@@ -100,6 +109,22 @@
 										size="16"
 									/>
 									{{ s.name }}
+								</a>
+							</div>
+
+							<div class="mt-4">
+								<a
+									href="/Carolina-Capilla-Resume.pdf"
+									download
+									class="inline-flex items-center gap-2 rounded-md px-4 py-2 font-semibold transition-colors"
+									:class="
+										isDark
+											? 'bg-white text-black hover:bg-neutral-100'
+											: 'bg-black text-white hover:bg-neutral-800'
+									"
+								>
+									<Icon name="mdi:download" size="18" />
+									Download CV
 								</a>
 							</div>
 
@@ -210,6 +235,8 @@ useSeoMeta({
 	twitterCard: 'summary_large_image'
 })
 const { textClass, chipClass, cardClass, socialClass } = useThemeClasses()
+const colorMode = useColorMode()
+const isDark = computed(() => colorMode.value === 'dark')
 
 const scrollToTop = () => {
 	if (typeof window !== 'undefined') {

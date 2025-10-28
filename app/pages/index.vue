@@ -23,5 +23,6 @@ useSeoMeta({
 	twitterCard: 'summary_large_image'
 })
 
-const featuredProject: Project = (projects.find((p) => p.title.includes('Valorant')) || projects[0])!
+const featuredProject: Project = (projects.find((p) => p.title.includes('Valorant')) ||
+	projects[0])!
 </script>

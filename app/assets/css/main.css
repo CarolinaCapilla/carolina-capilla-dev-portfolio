@@ -30,3 +30,15 @@ html {
 		radial-gradient(700px 400px at 25% 20%, rgba(15, 118, 110, 0.06), transparent 60%);
 	background-repeat: no-repeat;
 }
+
+/* Page transitions */
+.page-enter-active,
+.page-leave-active {
+	transition: all 0.3s;
+}
+
+.page-enter-from,
+.page-leave-to {
+	opacity: 0;
+	filter: blur(1rem);
+}
