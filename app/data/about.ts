@@ -104,12 +104,12 @@ export const aboutContent = {
 				timeframe: '2021 - 2025',
 				role: 'Intermediate Full Stack Developer',
 				achievements: [
-					'Developed and maintained applications using Laravel (PHP) and Vue.js.',
-					'Built and optimized RESTful APIs for data-driven features and reporting.',
-					'Collaborated cross-functionally to deliver scalable, client-focused solutions.',
-					'Maintained database solutions using MySQL and PostgreSQL.',
-					'Improved performance and UX via efficient backend logic and clean frontend.',
-					'Participated in agile rituals using Jira/Asana/Slack.'
+					'Developed and maintained multiple production web applications using Laravel (PHP) and Vue.js, delivering scalable solutions for diverse client requirements.',
+					'Built and optimized RESTful APIs for data-driven features and reporting dashboards, implementing caching and query optimization for improved performance.',
+					'Collaborated with cross-functional teams (product, design, QA) to deliver client-focused solutions, from requirements gathering through deployment.',
+					'Designed and maintained MySQL and PostgreSQL databases, ensuring data integrity, security, and optimal query performance for business-critical applications.',
+					'Enhanced application performance and user experience through efficient backend architecture, code refactoring, and responsive frontend implementations.',
+					'Contributed to agile development processes using Jira/Asana for task management and Slack for team collaboration, consistently meeting project milestones.'
 				],
 				images: []
 			},
