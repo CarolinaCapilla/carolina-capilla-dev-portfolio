@@ -25,7 +25,7 @@ export const projects: Project[] = [
 			{ name: 'Typescript', icon: 'simple-icons:typescript' }
 		],
 		isPortfolio: true,
-		source: 'https://github.com/sahajjain/magic-portfolio-vue'
+		source: 'https://github.com/CarolinaCapilla/carolina-capilla-dev-portfolio'
 	},
 	{
 		id: 2,

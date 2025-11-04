@@ -158,6 +158,22 @@
 							<ul class="mt-3 list-disc space-y-1 pl-5 text-sm sm:text-base" :class="textClass">
 								<li v-for="(a, ai) in exp.achievements" :key="ai">{{ a }}</li>
 							</ul>
+
+							<div v-if="exp.tags?.length" class="mt-3 flex flex-wrap gap-2">
+								<span
+									v-for="(tag, ti) in exp.tags"
+									:key="ti"
+									:class="[chipClass, 'px-3 text-sm']"
+								>
+									<Icon
+										v-if="tag.icon"
+										:name="tag.icon"
+										class="mr-1 inline-block align-[-0.125em]"
+										size="16"
+									/>
+									{{ tag.name }}
+								</span>
+							</div>
 						</div>
 					</div>
 				</section>

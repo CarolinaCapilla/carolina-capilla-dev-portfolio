@@ -13,6 +13,7 @@ export type Experience = {
 	role: string
 	achievements: Achievement[]
 	images?: ExperienceImage[]
+	tags?: SkillTag[]
 }
 
 export type Institution = {
@@ -107,11 +108,20 @@ export const aboutContent = {
 					'Developed and maintained multiple production web applications using Laravel (PHP) and Vue.js, delivering scalable solutions for diverse client requirements.',
 					'Built and optimized RESTful APIs for data-driven features and reporting dashboards, implementing caching and query optimization for improved performance.',
 					'Collaborated with cross-functional teams (product, design, QA) to deliver client-focused solutions, from requirements gathering through deployment.',
-					'Designed and maintained MySQL and PostgreSQL databases, ensuring data integrity, security, and optimal query performance for business-critical applications.',
+					'Designed and maintained MySQL databases, ensuring data integrity, security, and optimal query performance for business-critical applications.',
 					'Enhanced application performance and user experience through efficient backend architecture, code refactoring, and responsive frontend implementations.',
 					'Contributed to agile development processes using Jira/Asana for task management and Slack for team collaboration, consistently meeting project milestones.'
 				],
-				images: []
+				images: [],
+				tags: [
+					{ name: 'PHP', icon: 'simple-icons:php' },
+					{ name: 'Laravel', icon: 'simple-icons:laravel' },
+					{ name: 'Javascript', icon: 'simple-icons:javascript' },
+					{ name: 'Vue', icon: 'simple-icons:vuedotjs' },
+					{ name: 'Vuetify', icon: 'simple-icons:vuetify' },
+					{ name: 'Pinia', icon: 'simple-icons:pinia' },
+					{ name: 'MySQL', icon: 'simple-icons:mysql' }
+				]
 			},
 			{
 				company: 'Le Wagon',
@@ -121,7 +131,15 @@ export const aboutContent = {
 					'Assisted students with Ruby on Rails and JavaScript concepts and projects.',
 					'Provided guidance to improve coding and problem-solving skills.'
 				],
-				images: []
+				images: [],
+				tags: [
+					{ name: 'Ruby', icon: 'simple-icons:ruby' },
+					{ name: 'Ruby on Rails', icon: 'simple-icons:rubyonrails' },
+					{ name: 'Javascript', icon: 'simple-icons:javascript' },
+					{ name: 'CSS', icon: 'simple-icons:css3' },
+					{ name: 'SCSS', icon: 'simple-icons:sass' },
+					{ name: 'HTML', icon: 'simple-icons:html5' }
+				]
 			}
 		] as Experience[]
 	},

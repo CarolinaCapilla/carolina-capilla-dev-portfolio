@@ -34,7 +34,6 @@ const techStack = [
 	{ name: 'TypeScript', icon: 'simple-icons:typescript' },
 	{ name: 'Docker', icon: 'simple-icons:docker' },
 	{ name: 'MySQL', icon: 'simple-icons:mysql' },
-	{ name: 'PostgreSQL', icon: 'simple-icons:postgresql' },
 	{ name: 'Git', icon: 'simple-icons:git' },
 	{ name: 'GitHub', icon: 'simple-icons:github' }
 ]
