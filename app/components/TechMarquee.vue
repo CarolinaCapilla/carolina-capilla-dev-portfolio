@@ -28,6 +28,8 @@ const techStack = [
 	{ name: 'Laravel', icon: 'simple-icons:laravel' },
 	{ name: 'PHP', icon: 'simple-icons:php' },
 	{ name: 'Vue.js', icon: 'simple-icons:vuedotjs' },
+	{ name: 'Pinia', icon: 'simple-icons:pinia' },
+	{ name: 'JavaScript', icon: 'simple-icons:javascript' },
 	{ name: 'Nuxt', icon: 'simple-icons:nuxtdotjs' },
 	{ name: 'Tailwind CSS', icon: 'simple-icons:tailwindcss' },
 	{ name: 'Python', icon: 'simple-icons:python' },
