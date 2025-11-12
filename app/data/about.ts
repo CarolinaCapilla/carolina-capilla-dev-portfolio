@@ -90,10 +90,9 @@ export const aboutContent = {
 		display: true,
 		title: 'Introduction',
 		description: [
-			'Open to full-time roles (remote or Madrid-based). I love building scalable web apps with Laravel and Vue/Nuxt, and I look for teams focused on clean architecture and long-term growth.',
-			'Full Stack Developer with 4+ years of experience in backend and frontend development, focused on creating scalable, user-centric applications.',
-			'Strong problem-solving and communication skills; quick to adapt and learn new technologies.',
-			'Recently built Valorant Skill Collector — a Nuxt app that uses the Riot API to fetch weapon skin data, lets users browse a curated skin library, create collections, and maintain wishlists.'
+			'Highly skilled Full-Stack Developer with 4+ years of experience in designing, developing, and deploying scalable web applications. Expertise in Laravel, Vue.js (including Nuxt and Pinia), RESTful API development, and MySQL database optimization. Proven ability to collaborate effectively within agile development environments to deliver client-focused solutions.',
+			'Passionate about leveraging AI and large language models (LLMs) to build innovative applications.',
+			'Open to full-time roles—remote, hybrid, or on-site in Madrid.'
 		]
 	},
 	work: {
@@ -105,12 +104,13 @@ export const aboutContent = {
 				timeframe: '2021 - 2025',
 				role: 'Intermediate Full Stack Developer',
 				achievements: [
-					'Developed and maintained multiple production web applications using Laravel (PHP) and Vue.js, delivering scalable solutions for diverse client requirements.',
-					'Built and optimized RESTful APIs for data-driven features and reporting dashboards, implementing caching and query optimization for improved performance.',
-					'Collaborated with cross-functional teams (product, design, QA) to deliver client-focused solutions, from requirements gathering through deployment.',
+					'Developed and maintained multiple production-level web applications utilizing Laravel 10 and Vue 3 Composition API, ensuring scalable solutions for diverse client needs.',
+					'Led the migration of a legacy Vue 2 application to Vue 3, resulting in a 40% improvement in application performance.',
+					'Designed, built, and optimized RESTful APIs for data-driven features and reporting dashboards, incorporating caching strategies and query optimization techniques to enhance performance.',
+					'Collaborated with cross-functional teams including product managers, designers, and quality assurance engineers to deliver client-focused solutions from initial requirements gathering through successful deployment.',
 					'Designed and maintained MySQL databases, ensuring data integrity, security, and optimal query performance for business-critical applications.',
-					'Enhanced application performance and user experience through efficient backend architecture, code refactoring, and responsive frontend implementations.',
-					'Contributed to agile development processes using Jira/Asana for task management and Slack for team collaboration, consistently meeting project milestones.'
+					'Enhanced web application performance by implementing lazy loading, code splitting, and tree-shaking in Vue, substantially reducing initial bundle size and improving time-to-interactive for end users.',
+					'Actively participated in agile development processes, utilizing Jira and Asana for task management and Slack for team communication, consistently meeting project milestones.'
 				],
 				images: [],
 				tags: [
@@ -128,8 +128,8 @@ export const aboutContent = {
 				timeframe: '2020 - 2022',
 				role: 'Teaching Assistant',
 				achievements: [
-					'Assisted students with Ruby on Rails and JavaScript concepts and projects.',
-					'Provided guidance to improve coding and problem-solving skills.'
+					'Assisted instructors in delivering full-stack web development curriculum (Ruby on Rails, JavaScript), providing support, conducting code reviews, and facilitating group exercises to foster a collaborative learning environment.',
+					'Provided constructive feedback to students, improving their understanding of software development best practices.'
 				],
 				images: [],
 				tags: [

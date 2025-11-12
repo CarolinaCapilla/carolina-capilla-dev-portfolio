@@ -16,13 +16,13 @@ export const projects: Project[] = [
 		id: 1,
 		title: 'Portfolio Website',
 		description:
-			'A sleek personal portfolio built with Nuxt and Tailwind, with light and dark themes.',
+			'A modern personal portfolio built with Nuxt, Typescript, and Tailwind CSS, featuring light and dark themes.',
 		image: '/portfolio.png',
 		tags: [
 			{ name: 'Nuxt', icon: 'simple-icons:nuxtdotjs' },
 			{ name: 'Tailwind', icon: 'simple-icons:tailwindcss' },
 			{ name: 'Vue.js', icon: 'simple-icons:vuedotjs' },
-			{ name: 'Typescript', icon: 'simple-icons:typescript' }
+			{ name: 'TypeScript', icon: 'simple-icons:typescript' }
 		],
 		isPortfolio: true,
 		source: 'https://github.com/CarolinaCapilla/carolina-capilla-dev-portfolio'
@@ -31,7 +31,7 @@ export const projects: Project[] = [
 		id: 2,
 		title: 'Valorant Skill Collector',
 		description:
-			'A Nuxt-based web platform that uses the Riot API to fetch weapon skin data and provides a curated library where users can browse, discover, create collections of owned skins, and maintain a wishlist.',
+			'A Nuxt-based web platform utilizing the Riot API to fetch weapon skin data, allowing users to browse, discover, create collections, and maintain a wishlist.',
 		image: '/valorant_skin_collector_main.png',
 		tags: [
 			{ name: 'Nuxt', icon: 'simple-icons:nuxtdotjs' },
@@ -40,7 +40,7 @@ export const projects: Project[] = [
 			{ name: 'Vue.js', icon: 'simple-icons:vuedotjs' },
 			{ name: 'Pinia', icon: 'simple-icons:pinia' },
 			{ name: 'Riot API', icon: 'mdi:api' },
-			{ name: 'Typescript', icon: 'simple-icons:typescript' },
+			{ name: 'TypeScript', icon: 'simple-icons:typescript' },
 			{ name: 'MySQL', icon: 'simple-icons:mysql' },
 			{ name: 'Docker', icon: 'simple-icons:docker' }
 		],
@@ -77,7 +77,7 @@ export const projects: Project[] = [
 		id: 4,
 		title: 'Deep Research AI Agent',
 		description:
-			'Give it a topic and it does the digging: plans with OpenAI, reads sources, and turns findings into easy‑to‑scan summaries or email notes. Comes with a lightweight Gradio UI.',
+			'An AI agent that conducts in-depth research on a given topic, leveraging OpenAI to read sources and generate concise summaries or email notes, accessible through a lightweight Gradio UI.',
 		image: '/placeholder-work.svg',
 		tags: [
 			{ name: 'OpenAI', icon: 'simple-icons:openai' },
