@@ -58,7 +58,7 @@ export const projects: Project[] = [
 			{ name: 'Gradio', icon: 'simple-icons:gradio' },
 			{ name: 'MCP', icon: 'gravity-ui:logo-mcp' }
 		],
-		link: 'https://nyask-trader-floor-ai-simulator.hf.space/?__theme=dark',
+		link: 'https://trader-floor-ai-simulator-production.up.railway.app/',
 		source: 'https://github.com/CarolinaCapilla/trader-floor-ai-simulator'
 	},
 	// {
